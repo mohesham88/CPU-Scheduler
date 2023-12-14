@@ -5,19 +5,14 @@ import java.util.Queue;
 public abstract class Scheduler {
 
     ArrayList<Process> processes;
-    Queue<Process> runningQueue;
-    Queue<Process> waitingQueue;
+    Queue<Process> readyQueue;
+
 
     ArrayList<Process> dieList;
 
 
     public Scheduler(ArrayList<Process> processes){
         this.processes = processes;
-        runningQueue = new LinkedList<Process>();
-        waitingQueue = new LinkedList<Process>();
-        for(Process p : processes){
-            waitingQueue.add(p);
-        }
     }
 
     public abstract void runScheduler();
