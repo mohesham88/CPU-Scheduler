@@ -9,7 +9,6 @@ public class SJFScheduler extends Scheduler {
 
     @Override
     public void runScheduler() {
-        dieList = new ArrayList<>();
         readyQueue = new LinkedList<>();
         int currentTime = 0;
 

@@ -12,6 +12,7 @@ public abstract class Scheduler {
 
 
     public Scheduler(ArrayList<Process> processes){
+        dieList = new ArrayList<>();
         this.processes = processes;
     }
 
