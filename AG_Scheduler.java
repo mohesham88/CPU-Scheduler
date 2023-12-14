@@ -30,4 +30,9 @@ public class AG_Scheduler extends Scheduler{
         }
         return AG_Factor;
     }
+
+    @Override
+    public void runScheduler() {
+
+    }
 }
