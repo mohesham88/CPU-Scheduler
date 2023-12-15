@@ -6,6 +6,8 @@ public class Process {
     int turnAroundTime;
     int responseTime;
     int waitingTime;
+    int remainingTime;
+    boolean completed;
 
     Process(String name, int arrivalTime, int burstTime, int priority) {
         this.name = name;
@@ -15,6 +17,7 @@ public class Process {
         this.turnAroundTime = 0;
         this.responseTime = 0;
         this.waitingTime = 0;
+        this.completed = false;
     }
 
    // Getters and setters for attributes
@@ -72,6 +75,21 @@ public class Process {
 
     public void setWaitingTime(int waitingTime) {
         this.waitingTime = waitingTime;
+    }
+    public int getRemainingTime() {
+        return remainingTime;
+    }
+
+    public void setRemainingTime(int remainingTime) {
+        this.remainingTime = remainingTime;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
 }
