@@ -14,7 +14,7 @@ public class Main {
         processes.add(new Process("P4", 5, 3, 4));
 
         // Create SJF scheduler instance
-        SJFScheduler sjfScheduler = new SJFScheduler(processes);
+        SJFScheduler sjfScheduler = new SJFScheduler(processes,2);
 
         // Run the scheduler
         sjfScheduler.runScheduler();
