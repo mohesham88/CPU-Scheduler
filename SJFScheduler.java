@@ -35,14 +35,14 @@ public class SJFScheduler extends Scheduler {
                 readyQueue.remove(shortest);
                 dieList.add(shortest);
 
-                int waitingTime = currentTime - shortest.arrivalTime - shortest.burstTime;
-                int turnaroundTime = currentTime - shortest.arrivalTime;
+                shortest.waitingTime = currentTime - shortest.arrivalTime - shortest.burstTime;
+                shortest.turnAroundTime = currentTime - shortest.arrivalTime;
 
-                totalWaitingTime += waitingTime;
-                totalTurnaroundTime += turnaroundTime;
+                totalWaitingTime += shortest.waitingTime;
+                totalTurnaroundTime += shortest.turnAroundTime;
 
-                System.out.println("Waiting Time for " + shortest.name + ": " + waitingTime);
-                System.out.println("Turnaround Time for " + shortest.name + ": " + turnaroundTime);
+                System.out.println("Waiting Time for " + shortest.name + ": " + shortest.waitingTime);
+                System.out.println("Turnaround Time for " + shortest.name + ": " + shortest.turnAroundTime);
             } else {
                 currentTime++; // No process available yet, move to the next time unit
             }
@@ -54,9 +54,5 @@ public class SJFScheduler extends Scheduler {
         System.out.println("\nAverage Waiting Time: " + avgWaitingTime);
         System.out.println("Average Turnaround Time: " + avgTurnaroundTime);
 
-        System.out.println("\nHistory update of quantum time for each process:");
-        for (Process p : dieList) {
-            System.out.println("Process " + p.name + ": Quantum Time Updated");
-        }
     }
 }
