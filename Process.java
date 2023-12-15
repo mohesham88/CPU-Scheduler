@@ -4,42 +4,74 @@ public class Process {
     int burstTime;
     int priority;
     int turnAroundTime;
-    int responseTiem;
+    int responseTime;
+    int waitingTime;
 
     Process(String name, int arrivalTime, int burstTime, int priority) {
         this.name = name;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
         this.priority = priority;
+        this.turnAroundTime = 0;
+        this.responseTime = 0;
+        this.waitingTime = 0;
     }
 
+   // Getters and setters for attributes
     public String getProcessName() {
         return name;
     }
 
-    public void setProcessName(String processName)
-    {
+    public void setProcessName(String processName) {
         this.name = processName;
     }
 
-    public int getBurstTime()
-    {
+    public int getBurstTime() {
         return burstTime;
     }
 
-    public void setBurstTime(int burstTime)
-    {
+    public void setBurstTime(int burstTime) {
         this.burstTime = burstTime;
     }
 
-    public int getArrivalTime()
-    {
+    public int getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(int arrivalTime)
-    {
+    public void setArrivalTime(int arrivalTime) {
         this.arrivalTime = arrivalTime;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public int getTurnAroundTime() {
+        return turnAroundTime;
+    }
+
+    public void setTurnAroundTime(int turnAroundTime) {
+        this.turnAroundTime = turnAroundTime;
+    }
+
+    public int getResponseTime() {
+        return responseTime;
+    }
+
+    public void setResponseTime(int responseTime) {
+        this.responseTime = responseTime;
+    }
+
+    public int getWaitingTime() {
+        return waitingTime;
+    }
+
+    public void setWaitingTime(int waitingTime) {
+        this.waitingTime = waitingTime;
     }
 
 }
